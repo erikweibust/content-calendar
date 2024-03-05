@@ -22,3 +22,6 @@ cmdline:
 ```
 $ http POST localhost:8080/api/content < src/main/resources/post.json
 ```
+
+## Progress Tracker
+Pick up at 1:23:00 mark
