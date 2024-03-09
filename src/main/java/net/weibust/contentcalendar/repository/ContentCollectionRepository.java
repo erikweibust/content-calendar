@@ -31,6 +31,9 @@ public class ContentCollectionRepository {
     }
 
     public void save(Content content) {
+        // if exists, replace; otherwise add
+        // I think there is a code-smell here; I'll take another look if this works
+        contentList.removeIf(c -> c.id().equals(content.id()));
         contentList.add(content);
     }
 
@@ -39,6 +42,15 @@ public class ContentCollectionRepository {
         Content content = new Content(1, "My First Blog Post", "My first blog post", Status.IDEA, Type.ARTICLE, LocalDateTime.now(), null, "null");
 
         contentList.add(content); 
+    }
+
+    public boolean existsById(Integer id) {
+        return contentList.stream().filter( c -> c.id().equals(id)).count() ==1;
+        
+    }
+
+    public void delete(Integer id) {
+        contentList.removeIf(c -> c.id().equals(id));
     }
 
 }

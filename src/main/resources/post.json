@@ -1,9 +1,9 @@
 {
-    "id": 12,
-    "title": "My 12th Blog Post",
-    "desc": "My 12th blog post",
+    "id": 2,
+    "title": "My Second Blog Post",
+    "desc": "My second blog post",
     "status": "IDEA",
     "contentType": "ARTICLE",
-    "dateUpdated": "2024-03-05T10:25:02.838496",
+    "dateUpdated": "2024-03-08T10:25:02.838496",
     "url": ""
 }

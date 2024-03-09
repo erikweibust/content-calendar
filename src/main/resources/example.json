@@ -1,0 +1,49 @@
+### Create content item
+cmdline:
+```
+$ http POST localhost:8080/api/content < src/main/resources/post.json
+{
+    "id": 2,
+    "title": "My Second Blog Post",
+    "desc": "My second blog post",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-03-05T10:25:02.838496",
+    "url": ""
+}
+
+### Update content item - success
+cmdline:
+```
+$ http PUT localhost:8080/api/content/1 < src/main/resources/post.json
+{
+    "id": 1,
+    "title": "My First Blog Post",
+    "desc": "My first blog post - UPDATED",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-03-05T10:25:02.838496",
+    "dateUpdated": "2024-03-08T10:25:02.838496",
+    "url": "http://localhost:8080/my-12th-blog-post"
+}
+
+
+### Update content item - failure with content not found
+cmdline:
+```
+$ http PUT localhost:8080/api/content/99 < src/main/resources/post.json
+{
+    "id": 1,
+    "title": "My First Blog Post",
+    "desc": "My first blog post - UPDATED",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2024-03-05T10:25:02.838496",
+    "dateUpdated": "2024-03-08T10:25:02.838496",
+    "url": "http://localhost:8080/my-12th-blog-post"
+}
+
+### delete content item 
+cmdline:
+```
+$ http DELETE localhost:8080/api/content/2
